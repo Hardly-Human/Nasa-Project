@@ -1,5 +1,5 @@
 {
-	"name": "Nasa-Project",
+	"name": "nasa-project",
 	"version": "1.0.0",
 	"description": "Nasa Mission Control Dashboard",
 	"main": "index.js",
