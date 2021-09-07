@@ -7,9 +7,10 @@
 		"install-server": "npm install --prefix Server",
 		"install-client": "npm install --prefix Client",
 		"install": "npm run install-server && npm run install-client",
-		"server-dev": "npm run dev --prefix Server",
-		"client-dev": "npm run start --prefix Client",
-		"dev": "concurrently \"npm run server-dev\" \"npm run client-dev\" "
+		"server": "npm run dev --prefix Server",
+		"client": "npm run start --prefix Client",
+		"dev": "concurrently \"npm run server\" \"npm run client\" ",
+		"deploy": "npm run build --prefix Client && npm start --prefix Server"
 	},
 	"keywords": [],
 	"author": "",
