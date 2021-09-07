@@ -1,0 +1,20 @@
+{
+	"name": "Nasa-Project",
+	"version": "1.0.0",
+	"description": "Nasa Mission Control Dashboard",
+	"main": "index.js",
+	"scripts": {
+		"install-server": "npm install --prefix Server",
+		"install-client": "npm install --prefix Client",
+		"install": "npm run install-server && npm run install-client",
+		"server-dev": "npm run dev --prefix Server",
+		"client-dev": "npm run start --prefix Client",
+		"dev": "concurrently \"npm run server-dev\" \"npm run client-dev\" "
+	},
+	"keywords": [],
+	"author": "",
+	"license": "ISC",
+	"dependencies": {
+		"concurrently": "^6.2.1"
+	}
+}
