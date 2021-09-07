@@ -12,20 +12,27 @@ const isHabitablePlanet = (planet) => {
 	);
 };
 
-fs.createReadStream("./data/kepler_data.csv")
-	.pipe(parse({ comment: "#", columns: true }))
-	.on("data", (data) => {
-		if (isHabitablePlanet(data)) {
-			habitablePlanets.push(data);
-		}
-	})
-	.on("error", (error) => {
-		console.log(error);
-	})
-	.on("end", () => {
-		console.log(`${habitablePlanets.length} habitable planets found!`);
-		console.log(habitablePlanets.map((planet) => planet["kepler_name"]));
-		console.log("done");
-	});
+function loadPlanetsData() {
+	return new Promise((resolve, reject) => {
+		fs.createReadStream("./data/kepler_data.csv")
+			.pipe(parse({ comment: "#", columns: true }))
+			.on("data", (data) => {
+				if (isHabitablePlanet(data)) {
+					habitablePlanets.push(data);
+				}
+			})
+			.on("error", (error) => {
+				console.log(error);
+				reject(error);
+			})
+			.on("end", () => {
+				console.log(
+					`${habitablePlanets.length} habitable planets found!`
+				);
 
-module.exports = { planets: habitablePlanets };
+				resolve(habitablePlanets);
+			});
+	});
+}
+
+module.exports = { loadPlanetsData, planets: habitablePlanets };
