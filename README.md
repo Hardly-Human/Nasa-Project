@@ -21,11 +21,11 @@ npm run dev
 
 ## Features
 
-This Project is Buit with a ReactJS (Frontend) and NodeJS (Backend) with CRUD operations.
+This Project is Built with ReactJS (Frontend) and NodeJS (Backend) with CRUD operations.
 
--   Frontend of Application is built with [arwes](https://arwes.dev) { Futuristic Sci-Fi UI Web Framework }
--   It implements RESTFUL API's for CRUD operations on server.
--   It uses **concurrently** package to run both server as well as frontend at same time.
+-   The Frontend of the Application is built with [arwes](https://arwes.dev) { Futuristic Sci-Fi UI Web Framework }
+-   It implements RESTFUL APIs for CRUD operations on the server.
+-   It uses **concurrently** package to run both servers as well as the frontend at the same time.
 
 ## Links
 
